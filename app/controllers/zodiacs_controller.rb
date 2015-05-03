@@ -3,8 +3,20 @@ class ZodiacsController < ApplicationController
   def sign
     @text = params[:the_sign]
 
-    render 'sign'
+    z=Zodiac.find_by({ :sign => @text})
+
+    @prediction=z.fortune
+
   end
+
+  def creature
+    @text = params[:the_creature]
+
+    z=Zodiac.find_by({ :creature => @text})
+
+    @prediction=z.fortune
+  end
+
 
 
   def ram
