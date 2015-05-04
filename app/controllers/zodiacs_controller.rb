@@ -75,59 +75,6 @@ class ZodiacsController < ApplicationController
 
     @parameter = params[:the_sign]
     render 'dynamic'
-    # while true
-
-    #   if parameter == 'aries'
-    #     ram
-    #   end
-
-    #   if parameter == 'tuarus'
-    #     bull
-    #   end
-
-    #   if parameter == 'gemini'
-    #     twins
-    #   end
-
-    #   if parameter == 'cancer'
-    #     crab
-    #   end
-
-    #   if parameter == 'leo'
-    #     lion
-    #   end
-
-    #   if parameter == 'virgo'
-    #     maiden
-    #   end
-
-    #   if parameter == 'libra'
-    #     scales
-    #   end
-
-    #   if parameter == 'scorpio'
-    #     scorpion
-    #   end
-
-    #   if parameter == 'sagittarius'
-    #     archer
-    #   end
-
-    #   if parameter == 'capricorn'
-    #     goat
-    #   end
-
-    #   if parameter == 'aquarius'
-    #     waterbearer
-    #   end
-
-    #   if parameter == 'pisces'
-    #     fish
-    #   end
-
-    # break
-
-    # end
 
   end
 
