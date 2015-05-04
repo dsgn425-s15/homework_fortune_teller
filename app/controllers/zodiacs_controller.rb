@@ -50,7 +50,8 @@ class ZodiacsController < ApplicationController
     @prediction = "Business and financial success makes you happy and satisfied, Pisces. You also look forward to moving on. The downside of this flush period is that people who aren't particularly trustworthy might decide to latch onto your coattails for their own purposes. Some might even ask for loans. Be careful about the ones you assist. They might not be honest with you. Don't fall for any sob stories."
   end
 
-  def any_sign
-    @zodiac_hash = Zodiac.find_by({ :sign => params["other"]})
+  def sign
+    @zodiac = params["the_sign"]
+    @zodiac_hash = Zodiac.find_by({ :sign => params["the_sign"]})
   end
 end
