@@ -51,7 +51,10 @@ class ZodiacsController < ApplicationController
   end
 
   def sign
-    @zodiac = params["the_sign"]
     @zodiac_hash = Zodiac.find_by({ :sign => params["the_sign"]})
+  end
+
+  def creature
+    @zodiac_hash = Zodiac.find_by({ :creature => params["the_creature"]})
   end
 end
