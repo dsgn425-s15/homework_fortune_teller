@@ -2,13 +2,13 @@ class ZodiacsController < ApplicationController
 
 
 # Define new method called sign
-  def signs
+  def sign
     
     # params = {"the_sign"=>"Capricorn"}
 
     @zodiac = params["the_sign"]
 
-    # @prediction = "Signs."
+    @prediction = Zodiac.find_by( { :sign => params["the_sign"] })
 
     render 'sign'
   end
