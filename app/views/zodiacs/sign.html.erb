@@ -1,3 +1,5 @@
-<h1><%= params["the_sign"].titlecase %></h1>
+<h1><%= params["the_sign"].titlecase %>
+<small><%= Zodiac.find_by({ :sign => params["the_sign"] }).creature %></small>
+</h1>
 
 <p><%= Zodiac.find_by({ :sign => params["the_sign"] }).fortune %></p>
