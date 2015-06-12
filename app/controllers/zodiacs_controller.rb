@@ -1,5 +1,26 @@
-class Zodiacs < ApplicationController
+class ZodiacsController < ApplicationController
 
+  def sign
+
+    # params = { "the_sign" => "capricorn"}
+
+    @zodiac = Zodiac.find_by({:sign => params["the_sign"]})
+
+    @prediction = Zodiac.find_by({:sign => params["the_sign"]}).fortune
+
+
+  end 
+
+  def creature 
+
+    # params = { "the_sign" => "capricorn"}
+
+    @zodiac     = Zodiac.find_by({ :creature     => params["the_creature"]}).creature
+
+    @prediction = Zodiac.find_by({ :creature     => params["the_creature"]}).fortune 
+
+
+  end 
 
   def ram
     @prediction = "As your professional dreams unfold, Aries, you may worry about the downside. First, there are new responsibilities that you might doubt your ability to fulfill. Second, you might be catapulted into an uncomfortable new realm of office politics. Don't let these matters put a damper on your enthusiasm. You have what it takes to fulfill the first concern and the wisdom to avoid the second. Onward and upward."
@@ -38,7 +59,7 @@ class Zodiacs < ApplicationController
   end
 
   def scales
-    @prognosticator = "People close to you might be a bit worried about you, Libra. Too much work and socializing might have you feeling less than your usual self, and perhaps even a little feverish and headachy. If so, this is a good day to take time out, stay home, and rest. Don't worry about sabotaging your success. It will continue. Take a break and your body will reward you with greater clarity and concentration."
+    @prediction = "People close to you might be a bit worried about you, Libra. Too much work and socializing might have you feeling less than your usual self, and perhaps even a little feverish and headachy. If so, this is a good day to take time out, stay home, and rest. Don't worry about sabotaging your success. It will continue. Take a break and your body will reward you with greater clarity and concentration."
 
     render 'scales'
   end
@@ -50,7 +71,6 @@ class Zodiacs < ApplicationController
   end
 
   def archer
-
     @prediction = "The high from your recent successes could make you want to purchase luxury items that you used to think were impractical, Sagittarius. This is fine as long as you're discriminating and don't give in to impulse buying. This also isn't a good time to overindulge in food or drink. You should let yourself enjoy your success while still using common sense."
 
     render 'archer'
