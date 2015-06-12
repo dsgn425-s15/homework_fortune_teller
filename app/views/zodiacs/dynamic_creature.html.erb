@@ -1,0 +1,6 @@
+<h3>you searched for <%= @mycreature.capitalize %></h3>
+
+
+<h1> <%= ((Zodiac.find_by({ :creature => @mycreature })).sign).capitalize %> </h1>
+
+<%= (Zodiac.find_by({ :creature => @mycreature })).fortune %>
